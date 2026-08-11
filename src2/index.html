@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cổng Thông Tin Hỗ Trợ Việc Làm</title>
+  <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="bg-surface text-ink font-body">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:z-50">
+    Bỏ qua đến nội dung chính
+  </a>
+
+  <!-- Header / Navbar -->
+  <header class="border-b border-line">
+    <nav aria-label="Điều hướng chính" class="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
+      <a href="/" class="font-display font-bold text-xl text-brand-600">JobSupport</a>
+      <ul class="flex space-x-6">
+        <li><a href="#tinh-nang" class="hover:text-brand-600">Tính năng</a></li>
+        <li><a href="#bao-gia" class="hover:text-brand-600">Bảng giá</a></li>
+        <li><a href="#faq" class="hover:text-brand-600">Hỏi đáp</a></li>
+      </ul>
+      <button type="button" class="btn btn-primary">Đăng nhập</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    
+    <!-- 1. Hero (H1 duy nhất) -->
+    <section aria-labelledby="hero-title" class="section grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <h1 id="hero-title" class="font-display text-4xl lg:text-5xl font-bold text-ink">
+          Tìm kiếm công việc mơ ước của bạn ngay hôm nay
+        </h1>
+        <p class="mt-4 text-muted">
+          Kết nối ứng viên với hàng ngàn doanh nghiệp hàng đầu. Nâng cao cơ hội sự nghiệp của bạn chỉ với một vài thao tác đơn giản.
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a href="#danh-sach" class="btn btn-primary">Ứng tuyển ngay</a>
+          <button type="button" class="btn border border-line hover:bg-slate-50">Tìm hiểu thêm</button>
+        </div>
+      </div>
+      <div>
+        <div class="w-full h-64 bg-slate-100 rounded-card flex items-center justify-center text-muted border border-line">
+          Hình ảnh minh họa Hero
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Logo Đối tác -->
+    <section aria-labelledby="partners-title" class="section border-t border-line">
+      <h2 id="partners-title" class="text-center font-display text-2xl font-semibold text-muted mb-8">
+        Đối tác tin cậy của hơn 500+ doanh nghiệp
+      </h2>
+      <ul class="flex flex-wrap justify-center items-center gap-8 font-semibold text-slate-400">
+        <li>Công ty A</li>
+        <li>Công ty B</li>
+        <li>Công ty C</li>
+      </ul>
+    </section>
+
+    <!-- 3. Tính năng -->
+    <section id="tinh-nang" aria-labelledby="tinh-nang-title" class="section">
+      <h2 id="tinh-nang-title" class="font-display text-3xl font-bold text-center mb-12">
+        Tính năng nổi bật
+      </h2>
+      <ul class="grid md:grid-cols-3 gap-8">
+        <li class="p-6 border border-line rounded-card">
+          <h3 class="font-display text-xl font-bold mb-2">Tạo CV chuyên nghiệp</h3>
+          <p class="text-muted">Hỗ trợ các mẫu CV chuẩn quốc tế giúp bạn gây ấn tượng với nhà tuyển dụng.</p>
+        </li>
+        <li class="p-6 border border-line rounded-card">
+          <h3 class="font-display text-xl font-bold mb-2">Gợi ý việc làm thông minh</h3>
+          <p class="text-muted">Thuật toán khớp nối công việc dựa trên kỹ năng và kinh nghiệm của bạn.</p>
+        </li>
+        <li class="p-6 border border-line rounded-card">
+          <h3 class="font-display text-xl font-bold mb-2">Phỏng vấn thử AI</h3>
+          <p class="text-muted">Luyện tập câu hỏi phỏng vấn thực tế và nhận phản hồi ngay lập tức.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. Số liệu -->
+    <section aria-labelledby="stats-title" class="section bg-slate-50 rounded-card">
+      <h2 id="stats-title" class="font-display text-3xl font-bold text-center mb-12">
+        Thành tựu của chúng tôi
+      </h2>
+      <ul class="grid md:grid-cols-3 gap-8 text-center">
+        <li>
+          <p class="text-4xl font-bold text-brand-600">100,000+</p>
+          <p class="text-muted mt-2">Ứng viên tìm được việc</p>
+        </li>
+        <li>
+          <p class="text-4xl font-bold text-brand-600">5,000+</p>
+          <p class="text-muted mt-2">Doanh nghiệp đồng hành</p>
+        </li>
+        <li>
+          <p class="text-4xl font-bold text-brand-600">98%</p>
+          <p class="text-muted mt-2">Tỷ lệ hài lòng</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 5. Danh sách việc làm -->
+    <section id="danh-sach" aria-labelledby="jobs-title" class="section">
+      <h2 id="jobs-title" class="font-display text-3xl font-bold text-center mb-12">
+        Việc làm nổi bật
+      </h2>
+      <ul class="space-y-4">
+        <li class="p-6 border border-line rounded-card flex justify-between items-center">
+          <div>
+            <h3 class="font-display text-lg font-bold">Lập trình viên Frontend (Tailwind CSS)</h3>
+            <p class="text-muted">Công ty CNTT Sài Gòn • TP. Hồ Chí Minh</p>
+          </div>
+          <button type="button" class="btn btn-primary">Ứng tuyển</button>
+        </li>
+        <li class="p-6 border border-line rounded-card flex justify-between items-center">
+          <div>
+            <h3 class="font-display text-lg font-bold">Chuyên viên Thiết kế UX/UI</h3>
+            <p class="text-muted">Tập đoàn Công nghệ • Hà Nội</p>
+          </div>
+          <button type="button" class="btn btn-primary">Ứng tuyển</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 6. Cảm nhận -->
+    <section aria-labelledby="testimonials-title" class="section">
+      <h2 id="testimonials-title" class="font-display text-3xl font-bold text-center mb-12">
+        Góc nhìn từ ứng viên
+      </h2>
+      <ul class="grid md:grid-cols-2 gap-8">
+        <li class="p-6 border border-line rounded-card">
+          <p class="italic text-muted">"Trang web giúp tôi tìm được việc làm phù hợp chỉ sau 2 tuần đăng ký."</p>
+          <p class="font-bold mt-4">— Nguyễn Văn A, Developer</p>
+        </li>
+        <li class="p-6 border border-line rounded-card">
+          <p class="italic text-muted">"Giao diện trực quan, dễ sử dụng và tính năng tạo CV rất chuyên nghiệp."</p>
+          <p class="font-bold mt-4">— Trần Thị B, Designer</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 7. Bảng giá -->
+    <section id="bao-gia" aria-labelledby="pricing-title" class="section bg-slate-50 rounded-card">
+      <h2 id="pricing-title" class="font-display text-3xl font-bold text-center mb-12">
+        Gói dịch vụ
+      </h2>
+      <ul class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <li class="p-8 border border-line rounded-card bg-white">
+          <h3 class="font-display text-2xl font-bold">Cơ bản</h3>
+          <p class="text-3xl font-bold mt-4">Miễn phí</p>
+          <ul class="mt-6 space-y-2 text-muted">
+            <li>• Tạo 1 CV trực tuyến</li>
+            <li>• Ứng tuyển 5 công việc/tháng</li>
+          </ul>
+          <button type="button" class="btn border border-line w-full mt-6">Bắt đầu</button>
+        </li>
+        <li class="p-8 border-2 border-brand-600 rounded-card bg-white">
+          <h3 class="font-display text-2xl font-bold">Pro</h3>
+          <p class="text-3xl font-bold mt-4">199.000 đ/tháng</p>
+          <ul class="mt-6 space-y-2 text-muted">
+            <li>• Không giới hạn CV</li>
+            <li>• Ứng tuyển không giới hạn</li>
+            <li>• Ưu tiên hiển thị hồ sơ</li>
+          </ul>
+          <button type="button" class="btn btn-primary w-full mt-6">Nâng cấp ngay</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section id="faq" aria-labelledby="faq-title" class="section">
+      <h2 id="faq-title" class="font-display text-3xl font-bold text-center mb-12">
+        Câu hỏi thường gặp
+      </h2>
+      <ul class="max-w-3xl mx-auto space-y-6">
+        <li>
+          <h3 class="font-display text-lg font-bold mb-2">Tôi có cần trả phí để tìm việc không?</h3>
+          <p class="text-muted">Không, toàn bộ tính năng tìm việc và ứng tuyển hoàn toàn miễn phí cho ứng viên.</p>
+        </li>
+        <li>
+          <h3 class="font-display text-lg font-bold mb-2">Làm sao để nhà tuyển dụng chú ý đến CV của tôi?</h3>
+          <p class="text-muted">Bạn nên cập nhật đầy đủ thông tin kỹ năng, kinh nghiệm làm việc và đính kèm dự án thực tế.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 9. CTA -->
+    <section aria-labelledby="cta-title" class="section text-center bg-brand-600 text-white rounded-card my-10">
+      <h2 id="cta-title" class="font-display text-3xl font-bold mb-4">
+        Sẵn sàng cho bước tiến mới trong sự nghiệp?
+      </h2>
+      <p class="mb-8 max-w-xl mx-auto opacity-90">
+        Đăng ký tài khoản ngay hôm nay để không bỏ lỡ những cơ hội việc làm hấp dẫn nhất.
+      </p>
+      <a href="#" class="btn bg-white text-brand-600 hover:bg-slate-100">Tạo tài khoản miễn phí</a>
+    </section>
+
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="border-t border-line py-8">
+    <div class="mx-auto max-w-6xl px-5 text-center text-muted">
+      <p>&copy; 2026 JobSupport. Bảo lưu mọi quyền.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
