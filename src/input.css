@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Khôi phục hiển thị chuẩn cho danh sách để không bị vỡ layout */
+@layer base {
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+@theme {
+  --color-brand-600: #7c3aed;
+  --color-brand-700: #6d28d9;
+  
+  /* Token màu Light / Dark Mode */
+  --color-ink: #0f172a;
+  --color-ink-invert: #e2e8f0;
+  --color-muted: #64748b;
+  --color-muted-invert: #94a3b8;
+  --color-surface: #ffffff;
+  --color-surface-dark: #0f172a;
+  --color-surface-dark-alt: #1e293b;
+  --color-line: #e2e8f0;
+  --color-line-invert: #334155;
+  
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  
+  --radius-card: 0.875rem;
+}
+
+@layer components {
+  .section {
+    @apply mx-auto w-full max-w-6xl px-5 py-12 md:py-20 lg:py-28;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+
+  .field-label {
+    @apply block text-sm font-semibold mb-2 text-ink dark:text-ink-invert;
+  }
+
+  .field-input {
+    @apply w-full rounded-md border border-line bg-surface p-3 text-ink focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-line-invert dark:bg-surface-dark dark:text-ink-invert;
+  }
+
+  .field-error {
+    @apply mt-1 text-xs text-red-600 dark:text-red-400;
+  }
+}

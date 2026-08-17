@@ -1,0 +1,26 @@
+{
+  "name": "tkw_2551050208_thang",
+  "version": "1.0.0",
+  "description": "Chủ đề : Hỗ trợ tìm việc  sản phẩm : công viên phù hợp Màu thương hiệu : màu tím đậm #4e2a84 màu nhấn: xanh dương nhạt #836eaa màu chữ : đen màu chữ phụ:  màu nền : trắng viền: phông tiêu đề: phông nội dung: H1/H2/H3: padding dọc: bo góc thẻ:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thangngao246-aQua/tkw_2551050208_thang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/thangngao246-aQua/tkw_2551050208_thang/issues"
+  },
+  "homepage": "https://github.com/thangngao246-aQua/tkw_2551050208_thang#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

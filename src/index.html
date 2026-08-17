@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cổng Thông Tin Hỗ Trợ Việc Làm - JobSupport</title>
+  <script>(function(){const s=localStorage.getItem("theme"),d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{600:'#7c3aed',700:'#6d28d9'}}}}}</script>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:text-slate-900 focus:z-50">Bỏ qua đến nội dung chính</a>
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
+    <nav aria-label="Điều hướng chính" class="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
+      <a href="/" class="font-bold text-xl text-purple-600 dark:text-purple-400">JobSupport</a>
+      <div id="nav-mobile" class="hidden lg:flex absolute lg:static top-full left-0 right-0 bg-white dark:bg-slate-900 lg:bg-transparent p-5 lg:p-0 border-b lg:border-0 border-slate-200 dark:border-slate-800 flex-col lg:flex-row items-center gap-6 shadow-lg lg:shadow-none">
+        <ul class="flex flex-col lg:flex-row items-center gap-4 lg:space-x-6 text-sm font-medium">
+          <li><a href="#tinh-nang" class="hover:text-purple-600 dark:hover:text-purple-400">Tính năng</a></li>
+          <li><a href="#bao-gia" class="hover:text-purple-600 dark:hover:text-purple-400">Bảng giá</a></li>
+          <li><a href="#lien-he" class="hover:text-purple-600 dark:hover:text-purple-400">Liên hệ</a></li>
+          <li><a href="#faq" class="hover:text-purple-600 dark:hover:text-purple-400">Hỏi đáp</a></li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-3">
+        <button type="button" class="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-4 py-2 rounded-xl">Đăng nhập</button>
+        <button id="theme-toggle" type="button" aria-label="Chuyển đổi giao diện" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button id="menu-toggle" type="button" aria-controls="nav-mobile" aria-expanded="false" aria-label="Mở menu" class="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO SECTION (Đã bổ sung Ảnh Minh Họa Dashboard) -->
+    <section class="mx-auto max-w-6xl px-5 py-12 md:py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 dark:bg-purple-950/50 px-3 py-1 rounded-full">Nền tảng tuyển dụng AI</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 leading-tight">Tìm việc làm mơ ước & Tạo CV Chuyên Nghiệp</h1>
+        <p class="text-slate-500 dark:text-slate-400 mt-4 text-lg">Kết nối hàng ngàn cơ hội việc làm IT, Designer hàng đầu với sự hỗ trợ của thuật toán thông minh.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#danh-sach" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all">Tạo CV ngay</a>
+          <a href="#tinh-nang" class="border border-slate-200 dark:border-slate-800 font-semibold px-6 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800">Tìm hiểu thêm</a>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+        <!-- Ảnh Minh Họa Responsive với srcset/picture/img chuẩn Semantic -->
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Giao diện minh họa tìm kiếm việc làm JobSupport" class="w-full h-auto object-cover rounded-2xl" loading="eager" width="800" height="500">
+      </div>
+    </section>
+
+  <!-- Logo Đối tác -->
+<section class="mx-auto max-w-6xl px-5 py-12 border-t border-slate-200 dark:border-slate-800 text-center">
+  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-10">
+    Đối tác tin cậy của hơn 500+ doanh nghiệp hàng đầu
+  </h2>
+  
+  <!-- Đã tăng khoảng cách dãn rộng tối đa -->
+  <div class="flex flex-wrap items-center justify-between gap-10 sm:gap-14 md:gap-20 px-4">
+    <!-- Google -->
+    <div class="flex items-center gap-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer">
+      <svg class="h-7 w-auto fill-current" viewBox="0 0 24 24" aria-label="Google">
+        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+      </svg>
+      <span class="font-bold text-lg tracking-tight">Google</span>
+    </div>
+
+    <!-- Microsoft -->
+    <div class="flex items-center gap-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer">
+      <svg class="h-6 w-auto fill-current" viewBox="0 0 23 23" aria-label="Microsoft">
+        <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
+      </svg>
+      <span class="font-bold text-lg tracking-tight">Microsoft</span>
+    </div>
+
+    <!-- Spotify -->
+    <div class="flex items-center gap-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer">
+      <svg class="h-7 w-auto fill-current" viewBox="0 0 24 24" aria-label="Spotify">
+        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.899 4.62-1.02 8.52-.6 11.64 1.32.42.18.479.659.301 1.019zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-.1.2-1.38-.42-.78-.18-.6-.78.12-1.38 1.02 4.26-1.26 11.28-1.02 15.72 1.62.6.36.78 1.14.42 1.56z"/>
+      </svg>
+      <span class="font-bold text-lg tracking-tight">Spotify</span>
+    </div>
+
+    <!-- Amazon -->
+    <div class="flex items-center gap-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer">
+      <svg class="h-7 w-auto fill-current" viewBox="0 0 24 24" aria-label="Amazon">
+        <path d="M13.961 12.115c-.808.283-1.637.525-2.525.525-2.001 0-3.313-1.002-3.313-2.88 0-2.343 2.182-3.091 5.838-3.091v.182c0 1.636 0 3.826 0 5.264zm3.01-6.101c-.424-.263-.97-.384-1.576-.384-2.222 0-3.475 1.131-3.798 2.687l2.586.222c.202-.828.848-1.232 1.657-1.232.545 0 1.131.222 1.131.828v1.131c-3.798 0-8.525.485-8.525 4.545 0 2.505 1.737 3.838 3.96 3.838 1.939 0 3.232-.848 3.96-2.182h.101l.424 1.838h2.687V9.004c0-1.434-.343-2.384-2.607-2.99zM22.04 18.89c-3.353 2.485-8.222 3.798-12.444 3.798-5.919 0-10.727-2.182-14.545-5.818-.303-.303-.04-.707.343-.485 3.919 2.222 8.788 3.555 13.818 3.555 3.717 0 7.858-.889 11.232-2.868.525-.323.97.263.596.818z"/>
+      </svg>
+      <span class="font-bold text-lg tracking-tight">Amazon</span>
+    </div>
+
+    <!-- Meta -->
+    <div class="flex items-center gap-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer">
+      <svg class="h-6 w-auto fill-current" viewBox="0 0 24 24" aria-label="Meta">
+        <path d="M16.208 4.5c-2.025 0-3.83 1.162-4.708 2.858C10.62 5.662 8.815 4.5 6.792 4.5 3.593 4.5 1 7.093 1 10.292c0 4.148 3.89 7.82 9.942 10.988a1.12 1.12 0 0 0 1.116 0C18.11 18.112 22 14.44 22 10.292 22 7.093 19.407 4.5 16.208 4.5z"/>
+      </svg>
+      <span class="font-bold text-lg tracking-tight">Meta</span>
+    </div>
+  </div>
+</section>
+
+    <!-- Tính năng -->
+    <section id="tinh-nang" class="mx-auto max-w-6xl px-5 py-12">
+      <h2 class="text-3xl font-bold text-center mb-12">Tính năng nổi bật</h2>
+      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+          <h3 class="text-xl font-bold mb-2">Tạo CV chuyên nghiệp</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Hỗ trợ các mẫu CV chuẩn quốc tế giúp bạn gây ấn tượng với nhà tuyển dụng.</p>
+        </li>
+        <li class="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3 class="text-xl font-bold mb-2">Gợi ý việc làm thông minh</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Thuật toán khớp nối công việc dựa trên kỹ năng và kinh nghiệm của bạn.</p>
+        </li>
+        <li class="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></div>
+          <h3 class="text-xl font-bold mb-2">Phỏng vấn thử AI</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Luyện tập câu hỏi phỏng vấn thực tế và nhận phản hồi ngay lập tức.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Số liệu -->
+    <section class="mx-auto max-w-6xl px-5 py-12 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Thành tựu của chúng tôi</h2>
+      <dl class="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-700">
+        <div class="flex flex-col items-center pt-4 md:pt-0"><dt class="order-2 mt-2 text-sm text-slate-500 dark:text-slate-400">Ứng viên tìm được việc</dt><dd class="order-1 text-4xl font-extrabold text-purple-600 dark:text-purple-400">100,000+</dd></div>
+        <div class="flex flex-col items-center pt-4 md:pt-0"><dt class="order-2 mt-2 text-sm text-slate-500 dark:text-slate-400">Doanh nghiệp đồng hành</dt><dd class="order-1 text-4xl font-extrabold text-purple-600 dark:text-purple-400">5,000+</dd></div>
+        <div class="flex flex-col items-center pt-4 md:pt-0"><dt class="order-2 mt-2 text-sm text-slate-500 dark:text-slate-400">Tỷ lệ hài lòng</dt><dd class="order-1 text-4xl font-extrabold text-purple-600 dark:text-purple-400">98%</dd></div>
+      </dl>
+    </section>
+
+    <!-- Cảm nhận đại diện (Testimonial - Single) -->
+<section class="mx-auto max-w-4xl px-5 py-16 bg-slate-50 dark:bg-slate-800/40 rounded-3xl my-12 text-center">
+  <figure class="max-w-3xl mx-auto flex flex-col items-center">
+    <!-- Icon ngoặc kép chuẩn UI -->
+    <svg class="h-12 w-12 text-slate-400 dark:text-slate-600 mb-6 mx-auto" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+    </svg>
+    
+    <!-- Nội dung trích dẫn -->
+    <blockquote class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug sm:leading-normal">
+      "JobSupport thực sự rất tuyệt vời. Nền tảng sở hữu đầy đủ tính năng từ tạo CV chuyên nghiệp đến phỏng vấn thử bằng AI. Đây là lựa chọn hoàn hảo cho bất kỳ ai đang tìm kiếm cơ hội bứt phá sự nghiệp."
+    </blockquote>
+    
+    <!-- Thông tin tác giả (Không ảnh đại diện) -->
+    <figcaption class="mt-8 flex items-center justify-center text-sm font-semibold text-slate-900 dark:text-white">
+      <span>David Vance</span>
+      <span class="mx-2 text-slate-400">/</span>
+      <span class="text-slate-500 dark:text-slate-400 font-normal">Head of Product at TechGlobal</span>
+    </figcaption>
+  </figure>
+</section>
+
+    <section id="bao-gia" class="mx-auto max-w-6xl px-5 py-12 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold mb-4">Gói dịch vụ</h2>
+    <button id="pricing-toggle" role="switch" aria-checked="false" class="inline-flex items-center gap-3 bg-slate-200 dark:bg-slate-700 p-1.5 rounded-full text-sm font-semibold cursor-pointer">
+      <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold">Theo Tháng</span>
+      <span class="px-3 py-1 text-slate-500">Theo Năm (Tiết kiệm ~20%)</span>
+    </button>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+    <!-- Gói Cơ bản -->
+    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 flex flex-col justify-between">
+      <div>
+        <h3 class="text-2xl font-bold">Cơ bản</h3>
+        <div class="text-3xl font-bold mt-4">Miễn phí</div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-500 dark:text-slate-400">
+          <li>✓ Tạo 1 CV trực tuyến</li>
+          <li>✓ Ứng tuyển 5 công việc/tháng</li>
+        </ul>
+      </div>
+      <button type="button" class="mt-8 w-full py-3 border border-slate-200 dark:border-slate-700 rounded-xl font-semibold">Bắt đầu</button>
+    </div>
+
+    <!-- Gói Pro -->
+    <div class="bg-white dark:bg-slate-800 border-2 border-purple-600 rounded-2xl p-8 flex flex-col justify-between relative shadow-lg">
+      <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold">Khuyên dùng</span>
+      <div>
+        <h3 class="text-2xl font-bold mt-2">Pro</h3>
+        <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mt-4">
+          <span data-price data-monthly="69000" data-yearly="650000">69.000 ₫</span>
+          <span class="text-sm font-normal text-slate-500">/tháng</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-500 dark:text-slate-400">
+          <li>✓ Không giới hạn CV</li>
+          <li>✓ Ứng tuyển không giới hạn</li>
+          <li>✓ Ưu tiên hiển thị hồ sơ</li>
+        </ul>
+      </div>
+      <button type="button" class="mt-8 w-full py-3 bg-purple-600 text-white rounded-xl font-semibold">Nâng cấp ngay</button>
+    </div>
+
+    <!-- Gói Doanh nghiệp -->
+    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 flex flex-col justify-between">
+      <div>
+        <h3 class="text-2xl font-bold">Doanh nghiệp</h3>
+        <div class="text-3xl font-bold mt-4">
+          <span data-price data-monthly="129000" data-yearly="1190000">129.000 ₫</span>
+          <span class="text-sm font-normal text-slate-500">/tháng</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-500 dark:text-slate-400">
+          <li>✓ Đăng tin không giới hạn</li>
+          <li>✓ Lọc hồ sơ AI nâng cao</li>
+        </ul>
+      </div>
+      <button type="button" class="mt-8 w-full py-3 border border-slate-200 dark:border-slate-700 rounded-xl font-semibold">Nâng cấp ngay</button>
+    </div>
+  </div>
+</section>
+
+    <!-- Cách thức hoạt động -->
+    <section class="mx-auto max-w-6xl px-5 py-12">
+      <h2 class="text-3xl font-extrabold text-center mb-12">Cách thức hoạt động</h2>
+      <ol class="grid md:grid-cols-3 gap-6">
+        <li class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-start"><div class="w-10 h-10 rounded-xl bg-purple-600 text-white font-bold flex items-center justify-center mb-4">01</div><h3 class="text-lg font-bold mb-2">Tạo tài khoản</h3><p class="text-sm text-slate-500 dark:text-slate-400">Đăng ký tài khoản miễn phí chỉ trong 1 phút với thông tin cơ bản.</p></li>
+        <li class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-start"><div class="w-10 h-10 rounded-xl bg-purple-600 text-white font-bold flex items-center justify-center mb-4">02</div><h3 class="text-lg font-bold mb-2">Cập nhật CV</h3><p class="text-sm text-slate-500 dark:text-slate-400">Tải lên hoặc sử dụng công cụ tạo CV chuyên nghiệp tích hợp sẵn.</p></li>
+        <li class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-start"><div class="w-10 h-10 rounded-xl bg-purple-600 text-white font-bold flex items-center justify-center mb-4">03</div><h3 class="text-lg font-bold mb-2">Ứng tuyển</h3><p class="text-sm text-slate-500 dark:text-slate-400">Tìm kiếm công việc phù hợp và gửi hồ sơ trực tiếp đến nhà tuyển dụng.</p></li>
+      </ol>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="lien-he" class="mx-auto max-w-6xl px-5 py-12">
+      <h2 class="text-3xl font-bold text-center mb-12">Liên hệ với chúng tôi</h2>
+      <form class="max-w-2xl mx-auto p-8 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800 space-y-4" action="#" method="POST">
+        <div><label for="name" class="block text-sm font-semibold mb-2">Họ và tên *</label><input type="text" id="name" name="name" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm" required></div>
+        <div><label for="email" class="block text-sm font-semibold mb-2">Email *</label><input type="email" id="email" name="email" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm" required></div>
+        <div><label for="message" class="block text-sm font-semibold mb-2">Nội dung *</label><textarea id="message" name="message" rows="3" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm" required></textarea></div>
+        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition-all">Gửi liên hệ</button>
+      </form>
+    </section>
+
+    <!-- FAQ (Tích hợp Accordion JS Hook data-faq-trigger) -->
+    <section id="faq" class="mx-auto max-w-6xl px-5 py-12">
+      <h2 class="text-3xl font-bold text-center mb-12">Câu hỏi thường gặp</h2>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800 p-4">
+          <button type="button" data-faq-trigger aria-expanded="false" class="w-full text-left font-bold text-lg flex justify-between items-center">
+            <span>Tôi có cần trả phí để tìm việc không?</span>
+            <span class="text-purple-600">+</span>
+          </button>
+          <p class="hidden text-sm text-slate-500 dark:text-slate-400 mt-2">Không, toàn bộ tính năng tìm việc và ứng tuyển hoàn toàn miễn phí cho ứng viên.</p>
+        </div>
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800 p-4">
+          <button type="button" data-faq-trigger aria-expanded="false" class="w-full text-left font-bold text-lg flex justify-between items-center">
+            <span>Làm sao để nhà tuyển dụng chú ý đến CV của tôi?</span>
+            <span class="text-purple-600">+</span>
+          </button>
+          <p class="hidden text-sm text-slate-500 dark:text-slate-400 mt-2">Bạn nên cập nhật đầy đủ thông tin kỹ năng, kinh nghiệm làm việc và đính kèm dự án thực tế.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-6xl px-5 py-16 text-center bg-purple-600 text-white rounded-2xl my-10">
+      <h2 class="text-3xl font-bold mb-4">Sẵn sàng cho bước tiến mới?</h2>
+      <p class="mb-8 opacity-90">Đăng ký tài khoản ngay hôm nay để không bỏ lỡ những cơ hội việc làm hấp dẫn nhất.</p>
+      <a href="#" class="bg-white text-purple-600 font-semibold px-6 py-3 rounded-xl inline-block">Tạo tài khoản miễn phí</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-12">
+    <div class="mx-auto max-w-6xl px-5 flex flex-wrap justify-between items-center gap-4 text-sm text-slate-500">
+      <p>© 2026 JobSupport. Tất cả quyền được bảo lưu.</p>
+      <div class="flex gap-6"><a href="#tinh-nang">Tính năng</a><a href="#bao-gia">Bảng giá</a><a href="#lien-he">Liên hệ</a></div>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('pricing-toggle');
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+      const isYearly = toggleBtn.getAttribute('aria-checked') !== 'true';
+      toggleBtn.setAttribute('aria-checked', isYearly ? 'true' : 'false');
+
+      // Đổi UI Nút Switch
+      const [monthlyLabel, yearlyLabel] = toggleBtn.querySelectorAll('span');
+      if (isYearly) {
+        monthlyLabel.className = 'px-3 py-1 text-slate-500';
+        yearlyLabel.className = 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold';
+      } else {
+        monthlyLabel.className = 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold';
+        yearlyLabel.className = 'px-3 py-1 text-slate-500';
+      }
+
+      // Đổi Giá Tiền
+      document.querySelectorAll('[data-price]').forEach(priceEl => {
+        const val = isYearly ? priceEl.dataset.yearly : priceEl.dataset.monthly;
+        if (val) {
+          priceEl.textContent = `${Number(val).toLocaleString('vi-VN')} ₫`;
+        }
+      });
+
+      // Đổi Đơn vị /tháng hoặc /năm
+      document.querySelectorAll('#bao-gia span').forEach(span => {
+        const text = span.textContent.trim();
+        if (text === '/tháng' || text === '/năm') {
+          span.textContent = isYearly ? '/năm' : '/tháng';
+        }
+      });
+    });
+  });
+</script>
+
+  <!-- Script dự phòng khởi tạo sự kiện DOM -->
+  <script>
+    // 1. Xử lý sự kiện bật/tắt Dark Mode
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    }
+
+    // 2. Xử lý sự kiện đóng/mở Mobile Menu
+    const menuToggleBtn = document.getElementById('menu-toggle');
+    const navMobile = document.getElementById('nav-mobile');
+    if (menuToggleBtn && navMobile) {
+      menuToggleBtn.addEventListener('click', () => {
+        const isExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
+        menuToggleBtn.setAttribute('aria-expanded', !isExpanded);
+        navMobile.classList.toggle('hidden');
+      });
+    }
+  </script>
+
+
+</body>
+</html>
