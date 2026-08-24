@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu - JobSupport</title>
+  <meta name="description" content="Tìm hiểu về sứ mệnh, tầm nhìn và đội ngũ đứng sau nền tảng hỗ trợ việc làm JobSupport">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Nạp Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              600: '#7c3aed',
+              700: '#6d28d9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Script chống Flicker Dark Mode -->
+  <script>
+    (function(){
+      const saved = localStorage.getItem("theme");
+      const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", dark);
+    })();
+  </script>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-sans">
+  
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:text-slate-900 focus:z-50">Bỏ qua đến nội dung chính</a>
+
+  <!-- 1. NAVBAR -->
+  <header id="header" class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md transition-shadow duration-200">
+    <nav aria-label="Điều hướng chính" class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <!-- Logo Thương Hiệu -->
+      <a href="index.html" class="flex items-center gap-2.5 font-bold text-xl text-purple-600 dark:text-purple-400 transition-opacity hover:opacity-90">
+        <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-600 text-white shadow-sm">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </span>
+        <span>Job<span class="text-purple-600 dark:text-purple-400">Support</span></span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <ul class="hidden items-center gap-6 md:flex">
+        <li><a href="index.html#tinh-nang" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400">Tính năng</a></li>
+        <li><a href="gioithieu.html" class="text-sm font-bold text-purple-600 dark:text-purple-400" aria-current="page">Giới thiệu</a></li>
+        <li><a href="pricing.html" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400">Bảng giá</a></li>
+        <li><a href="dulieu.html" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400">Dữ liệu</a></li>
+        <li><a href="lienhe.html" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400">Liên hệ</a></li>
+        <li><a href="index.html#faq" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400">Hỏi đáp</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" type="button" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none" aria-label="Chuyển đổi chế độ sáng/tối">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <a href="pricing.html" class="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors">Dùng thử ngay</a>
+        <button id="menu-toggle" type="button" class="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800" aria-label="Mở menu" aria-expanded="false" aria-controls="nav-mobile">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="nav-mobile" class="hidden lg:hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm">
+    <div class="fixed right-0 top-0 h-full w-4/5 max-w-xs bg-white dark:bg-slate-900 p-6 shadow-xl flex flex-col justify-between">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+          <span class="font-bold text-slate-900 dark:text-white">Danh mục Menu</span>
+          <button id="close-menu-btn" type="button" class="p-1 text-slate-500 hover:text-slate-900 dark:hover:text-white" aria-label="Đóng menu">✕</button>
+        </div>
+        <ul class="flex flex-col gap-4 font-medium text-slate-900 dark:text-white">
+          <li><a href="index.html#tinh-nang" class="block py-1 hover:text-purple-600">Tính năng</a></li>
+          <li><a href="gioithieu.html" class="block py-1 text-purple-600 font-bold">Giới thiệu</a></li>
+          <li><a href="pricing.html" class="block py-1 hover:text-purple-600">Bảng giá</a></li>
+          <li><a href="dulieu.html" class="block py-1 hover:text-purple-600">Dữ liệu</a></li>
+          <li><a href="lienhe.html" class="block py-1 hover:text-purple-600">Liên hệ</a></li>
+          <li><a href="index.html#faq" class="block py-1 hover:text-purple-600">Hỏi đáp</a></li>
+        </ul>
+      </div>
+      <a href="pricing.html" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition-colors">Dùng thử ngay</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- 2. HERO ABOUT SECTION -->
+    <section aria-labelledby="about-hero-title" class="reveal-item py-16 text-center max-w-3xl mx-auto px-5">
+      <p class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/50 px-3 py-1 rounded-full inline-block">Về chúng tôi</p>
+      <h1 id="about-hero-title" class="mt-4 text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
+        Đơn giản hóa trải nghiệm tìm kiếm việc làm tại Việt Nam
+      </h1>
+      <p class="mt-6 text-lg text-slate-500 dark:text-slate-400">
+        Chúng tôi sinh ra với mục tiêu giải quyết rào cản phức tạp trong kết nối tuyển dụng, giúp ứng viên dễ dàng kết nối với công việc mơ ước và phát triển sự nghiệp bền vững.
+      </p>
+    </section>
+
+    <!-- 3. TẦM NHÌN & SỨ MỆNH -->
+    <section aria-labelledby="mission-title" class="reveal-item border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-8 shadow-sm">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </span>
+            <h2 id="mission-title" class="mt-4 text-2xl font-bold text-slate-900 dark:text-white">Sứ mệnh</h2>
+            <p class="mt-3 text-slate-500 dark:text-slate-400">
+              Cung cấp công cụ hỗ trợ tạo CV chuyên nghiệp và tự động hóa kết nối chuẩn xác nhất cho người tìm việc, giúp hạn chế rủi ro ứng tuyển thất bại và tiết kiệm thời gian tra cứu.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-8 shadow-sm">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </span>
+            <h2 class="mt-4 text-2xl font-bold text-slate-900 dark:text-white">Tầm nhìn</h2>
+            <p class="mt-3 text-slate-500 dark:text-slate-400">
+              Trở thành nền tảng hỗ trợ lựa chọn cơ hội nghề nghiệp hàng đầu Việt Nam, kết nối hàng triệu người lao động với các doanh nghiệp uy tín trên toàn quốc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GIÁ TRỊ CỐT LÕI -->
+    <section aria-labelledby="values-title" class="reveal-item border-t border-slate-200 dark:border-slate-800 py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/50 px-3 py-1 rounded-full inline-block">Giá trị cốt lõi</p>
+          <h2 id="values-title" class="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Những nguyên tắc hoạt động của chúng tôi</h2>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Minh bạch & Chính xác</h3>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Thực trạng tin tuyển dụng, mức lương và thông tin doanh nghiệp được xác thực liên tục từ các nhà tuyển dụng uy tín.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Hướng đến ứng viên</h3>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Giao diện tối giản, trực quan, hỗ trợ tối đa trải nghiệm tiếp cận và ứng tuyển trên mọi thiết bị.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Đột phá công nghệ</h3>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Áp dụng thuật toán AI thông minh trong việc gợi ý việc làm phù hợp và đánh giá mức độ tương thích hồ sơ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ĐỘI NGŨ PHÁT TRIỂN -->
+    <section aria-labelledby="team-title" class="reveal-item border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/50 px-3 py-1 rounded-full inline-block">Đội ngũ</p>
+          <h2 id="team-title" class="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Những con người đứng sau dự án</h2>
+        </div>
+
+        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6 text-center">
+            <div class="mx-auto h-24 w-24 rounded-full bg-purple-100 dark:bg-purple-950 flex items-center justify-center font-bold text-2xl text-purple-600 dark:text-purple-400 border border-slate-200 dark:border-slate-800">
+              KV
+            </div>
+            <h3 class="mt-4 font-bold text-lg text-slate-900 dark:text-white">Khoa Võ</h3>
+            <p class="text-sm text-purple-600 dark:text-purple-400 font-medium">Founder & Lead Dev</p>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Định hướng sản phẩm và phát triển thuật toán gợi ý việc làm thông minh.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6 text-center">
+            <div class="mx-auto h-24 w-24 rounded-full bg-purple-100 dark:bg-purple-950 flex items-center justify-center font-bold text-2xl text-purple-600 dark:text-purple-400 border border-slate-200 dark:border-slate-800">
+              HM
+            </div>
+            <h3 class="mt-4 font-bold text-lg text-slate-900 dark:text-white">Hoàng Minh</h3>
+            <p class="text-sm text-purple-600 dark:text-purple-400 font-medium">HR Data Specialist</p>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Quản lý cơ sở dữ liệu việc làm, tiêu chuẩn ngành nghề và tư vấn định hướng sự nghiệp.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6 text-center">
+            <div class="mx-auto h-24 w-24 rounded-full bg-purple-100 dark:bg-purple-950 flex items-center justify-center font-bold text-2xl text-purple-600 dark:text-purple-400 border border-slate-200 dark:border-slate-800">
+              AN
+            </div>
+            <h3 class="mt-4 font-bold text-lg text-slate-900 dark:text-white">Anh Nguyễn</h3>
+            <p class="text-sm text-purple-600 dark:text-purple-400 font-medium">UI/UX Designer</p>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Thiết kế mẫu CV hiện đại và hệ thống giao diện chuẩn tiếp cận người dùng (Accessibility).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CALL TO ACTION -->
+    <section aria-labelledby="about-cta-title" class="reveal-item border-t border-slate-200 dark:border-slate-800 py-16">
+      <div class="mx-auto max-w-6xl px-5 text-center">
+        <h2 id="about-cta-title" class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Cùng trải nghiệm JobSupport ngay hôm nay</h2>
+        <p class="mt-4 text-slate-500 dark:text-slate-400">Khám phá công việc mơ ước và xây dựng sự nghiệp thành công chỉ trong vài phút.</p>
+        <div class="mt-8 flex justify-center gap-4">
+          <a href="index.html" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all">Bắt đầu ngay</a>
+          <a href="lienhe.html" class="border border-slate-200 dark:border-slate-800 font-semibold px-6 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800">Liên hệ hỗ trợ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-12">
+    <div class="mx-auto grid max-w-6xl gap-8 px-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 font-bold text-lg text-slate-900 dark:text-white">
+          <span class="flex h-7 w-7 items-center justify-center rounded-md bg-purple-600 text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </span>
+          <span>JobSupport</span>
+        </a>
+        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Nền tảng hỗ trợ tuyển dụng và tìm kiếm việc làm hàng đầu Việt Nam.</p>
+      </div>
+      <nav aria-labelledby="footer-product">
+        <h3 id="footer-product" class="text-sm font-bold text-slate-900 dark:text-white">Sản phẩm</h3>
+        <ul class="mt-4 flex flex-col gap-2 text-sm text-slate-500 dark:text-slate-400">
+          <li><a href="index.html#tinh-nang" class="hover:text-slate-900 dark:hover:text-white">Tính năng</a></li>
+          <li><a href="jobs.html" class="hover:text-slate-900 dark:hover:text-white">Sổ Việc Làm</a></li>
+          <li><a href="pricing.html" class="hover:text-slate-900 dark:hover:text-white">Bảng giá</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-support">
+        <h3 id="footer-support" class="text-sm font-bold text-slate-900 dark:text-white">Hỗ trợ</h3>
+        <ul class="mt-4 flex flex-col gap-2 text-sm text-slate-500 dark:text-slate-400">
+          <li><a href="index.html#faq" class="hover:text-slate-900 dark:hover:text-white">Hỏi đáp</a></li>
+          <li><a href="lienhe.html" class="hover:text-slate-900 dark:hover:text-white">Liên hệ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 class="text-sm font-bold text-slate-900 dark:text-white">Địa chỉ</h3>
+        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Khoa CNTT, Trường Đại học Mở TP.HCM</p>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 max-w-6xl border-t border-slate-200 dark:border-slate-800 px-5 pt-6 text-center text-xs text-slate-500">
+      &copy; 2026 JobSupport. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Nạp duy nhất JavaScript Module main.js -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
