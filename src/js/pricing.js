@@ -3,33 +3,29 @@ export function initPricing() {
   if (!toggleBtn) return;
 
   const priceElements = document.querySelectorAll("[data-price]");
-  const formatter = new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-    maximumFractionDigits: 0,
-  });
 
   toggleBtn.addEventListener("click", () => {
     const isYearly = toggleBtn.getAttribute("aria-checked") !== "true";
     toggleBtn.setAttribute("aria-checked", String(isYearly));
 
-    // Đổi giao diện giao diện công tắc
+    // 1. Đổi giao diện công tắc
     const [monthlyLabel, yearlyLabel] = toggleBtn.querySelectorAll("span");
     if (monthlyLabel && yearlyLabel) {
       if (isYearly) {
-        monthlyLabel.className = "px-3 py-1 text-slate-500";
-        yearlyLabel.className = "px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold";
+        monthlyLabel.className = "px-3 py-1 text-slate-500 cursor-pointer";
+        yearlyLabel.className = "px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold cursor-pointer";
       } else {
-        monthlyLabel.className = "px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold";
-        yearlyLabel.className = "px-3 py-1 text-slate-500";
+        monthlyLabel.className = "px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold cursor-pointer";
+        yearlyLabel.className = "px-3 py-1 text-slate-500 cursor-pointer";
       }
     }
 
-    // Đổi giá tiền và đơn vị
+    // 2. Đổi giá tiền & đơn vị hiển thị
     priceElements.forEach((el) => {
       const val = isYearly ? el.dataset.yearly : el.dataset.monthly;
       if (val) {
-        el.textContent = formatter.format(Number(val));
+        // Định dạng phân cách hàng nghìn chuẩn vi-VN và gắn thêm ₫
+        el.textContent = `${Number(val).toLocaleString("vi-VN")} ₫`;
       }
 
       const periodText = el.nextElementSibling;
@@ -38,4 +34,11 @@ export function initPricing() {
       }
     });
   });
+}
+
+// Tự động kích hoạt hàm khi cây DOM đã sẵn sàng
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPricing);
+} else {
+  initPricing();
 }

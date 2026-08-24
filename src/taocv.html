@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công Cụ Tạo CV Trực Tuyến - JobSupport</title>
+  <script>(function(){const s=localStorage.getItem("theme"),d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{600:'#7c3aed',700:'#6d28d9'}}}}}</script>
+  <style>
+    @media print {
+      body * { visibility: hidden; }
+      #cv-preview, #cv-preview * { visibility: visible; }
+      #cv-preview { position: absolute; left: 0; top: 0; width: 100%; border: none; shadow: none; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="no-print sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="font-bold text-xl text-purple-600 dark:text-purple-400">JobSupport CV Builder</a>
+      <div class="flex gap-3">
+        <a href="index.html" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-semibold">Trang Chủ</a>
+        <button id="btn-print" type="button" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2 rounded-xl text-sm transition-all shadow">
+          🖨️ Tải / In CV (PDF)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-5 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start my-6">
+    
+    <!-- CỘT BÊN TRÁI: FORM NHẬP THÔNG TIN -->
+    <div class="no-print bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-6">
+      <h2 class="text-xl font-bold pb-2 border-b border-slate-200 dark:border-slate-700">Thông tin cá nhân</h2>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold mb-1">Họ và Tên</label>
+          <input type="text" id="input-fullname" value="Nguyễn Văn A" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1">Vị trí ứng tuyển</label>
+            <input type="text" id="input-jobtitle" value="Frontend Developer" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Email</label>
+            <input type="email" id="input-email" value="nguyenvana@gmail.com" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1">Số điện thoại</label>
+            <input type="text" id="input-phone" value="0912 345 678" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Địa chỉ</label>
+            <input type="text" id="input-address" value="Thành phố Hồ Chí Minh" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-xl font-bold pb-2 border-b border-slate-200 dark:border-slate-700 pt-4">Nội dung CV</h2>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold mb-1">Mục tiêu nghề nghiệp</label>
+          <textarea id="input-summary" rows="3" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">Lập trình viên Web với 2 năm kinh nghiệm thực chiến HTML, CSS, JavaScript và Tailwind CSS. Mong muốn cống hiến khả năng tối ưu trải nghiệm người dùng cho các dự án lớn.</textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1">Kinh nghiệm làm việc</label>
+          <textarea id="input-experience" rows="4" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">• Công ty TechGlobal (2024 - Hiện tại): Lập trình Giao diện Web.
+• Công ty Startup X (2023 - 2024): Thiết kế & Cắt HTML/CSS theo mẫu Figma.</textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1">Kỹ năng chuyên môn</label>
+          <input type="text" id="input-skills" value="HTML5, CSS3, JavaScript, Tailwind CSS, Git, ReactJS" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-sm">
+        </div>
+      </div>
+    </div>
+
+    <!-- CỘT BÊN PHẢI: BẢN XEM TRƯỚC CV (LIVE PREVIEW) -->
+    <div class="sticky top-24">
+      <h3 class="no-print text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Xem trước kết quả</h3>
+      
+      <!-- Khung Trang A4 CV -->
+      <div id="cv-preview" class="bg-white text-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-200 min-h-[700px] flex flex-col justify-between">
+        <div>
+          <!-- Header CV -->
+          <div class="border-b-2 border-purple-600 pb-4 mb-6">
+            <h1 id="preview-fullname" class="text-3xl font-extrabold text-slate-900 tracking-tight">Nguyễn Văn A</h1>
+            <p id="preview-jobtitle" class="text-purple-600 font-bold text-lg mt-1">Frontend Developer</p>
+            <div class="flex flex-wrap gap-4 text-xs text-slate-500 mt-3">
+              <span id="preview-email">✉️ nguyenvana@gmail.com</span>
+              <span id="preview-phone">📞 0912 345 678</span>
+              <span id="preview-address">📍 Thành phố Hồ Chí Minh</span>
+            </div>
+          </div>
+
+          <!-- Nội dung CV -->
+          <div class="space-y-6">
+            <section>
+              <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-2">Mục tiêu nghề nghiệp</h2>
+              <p id="preview-summary" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line"></p>
+            </section>
+
+            <section>
+              <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-2">Kinh nghiệm làm việc</h2>
+              <p id="preview-experience" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line"></p>
+            </section>
+
+            <section>
+              <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-2">Kỹ năng</h2>
+              <p id="preview-skills" class="text-sm text-slate-700 font-medium"></p>
+            </section>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-slate-100 text-center text-xs text-slate-400">
+          Tạo trực tuyến từ JobSupport Portal
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SCRIPT CẬP NHẬT LIVE PREVIEW & IN -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const inputs = {
+        fullname: document.getElementById("input-fullname"),
+        jobtitle: document.getElementById("input-jobtitle"),
+        email: document.getElementById("input-email"),
+        phone: document.getElementById("input-phone"),
+        address: document.getElementById("input-address"),
+        summary: document.getElementById("input-summary"),
+        experience: document.getElementById("input-experience"),
+        skills: document.getElementById("input-skills")
+      };
+
+      const previews = {
+        fullname: document.getElementById("preview-fullname"),
+        jobtitle: document.getElementById("preview-jobtitle"),
+        email: document.getElementById("preview-email"),
+        phone: document.getElementById("preview-phone"),
+        address: document.getElementById("preview-address"),
+        summary: document.getElementById("preview-summary"),
+        experience: document.getElementById("preview-experience"),
+        skills: document.getElementById("preview-skills")
+      };
+
+      function updatePreview() {
+        previews.fullname.textContent = inputs.fullname.value || "Họ và Tên";
+        previews.jobtitle.textContent = inputs.jobtitle.value || "Vị trí tuyển dụng";
+        previews.email.textContent = "✉️ " + (inputs.email.value || "email@example.com");
+        previews.phone.textContent = "📞 " + (inputs.phone.value || "0000000000");
+        previews.address.textContent = "📍 " + (inputs.address.value || "Địa chỉ");
+        previews.summary.textContent = inputs.summary.value;
+        previews.experience.textContent = inputs.experience.value;
+        previews.skills.textContent = inputs.skills.value;
+      }
+
+      // Lắng nghe sự kiện gõ phím để cập nhật trực tiếp
+      Object.values(inputs).forEach(input => {
+        input.addEventListener("input", updatePreview);
+      });
+
+      // Khởi chạy cập nhật lần đầu
+      updatePreview();
+
+      // Sự kiện nút In / Tải PDF
+      document.getElementById("btn-print").addEventListener("click", () => {
+        window.print();
+      });
+    });
+  </script>
+  
+</body>
+</html>

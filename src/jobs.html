@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sổ Việc Làm & Lọc Tuyển Dụng - JobSupport</title>
+  <script>(function(){const s=localStorage.getItem("theme"),d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{600:'#7c3aed',700:'#6d28d9'}}}}}</script>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:text-slate-900 focus:z-50">Bỏ qua đến nội dung chính</a>
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
+    <nav aria-label="Điều hướng chính" class="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
+      <a href="./index.html" class="font-bold text-xl text-purple-600 dark:text-purple-400">JobSupport</a>
+      <div id="nav-mobile" class="hidden lg:flex absolute lg:static top-full left-0 right-0 bg-white dark:bg-slate-900 lg:bg-transparent p-5 lg:p-0 border-b lg:border-0 border-slate-200 dark:border-slate-800 flex-col lg:flex-row items-center gap-6 shadow-lg lg:shadow-none">
+        <ul class="flex flex-col lg:flex-row items-center gap-4 lg:space-x-6 text-sm font-medium">
+          <li><a href="./index.html#tinh-nang" class="hover:text-purple-600 dark:hover:text-purple-400">Tính năng</a></li>
+          <li><a href="./jobs.html" class="text-purple-600 font-bold dark:text-purple-400">Sổ việc làm</a></li>
+          <li><a href="./index.html#bao-gia" class="hover:text-purple-600 dark:hover:text-purple-400">Bảng giá</a></li>
+          <li><a href="./index.html#lien-he" class="hover:text-purple-600 dark:hover:text-purple-400">Liên hệ</a></li>
+          <li><a href="./index.html#faq" class="hover:text-purple-600 dark:hover:text-purple-400">Hỏi đáp</a></li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="./index.html#lien-he" class="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-4 py-2 rounded-xl">Đăng nhập</a>
+        <button id="theme-toggle" type="button" aria-label="Chuyển đổi giao diện" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button id="menu-toggle" type="button" aria-controls="nav-mobile" aria-expanded="false" aria-label="Mở menu" class="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-6xl px-5 py-12">
+    <!-- Tiêu đề trang -->
+    <div class="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h1 class="text-3xl font-extrabold mb-2">Sổ Việc Làm Tuyển Dụng</h1>
+        <p class="text-slate-500 dark:text-slate-400">Danh sách các cơ hội nghề nghiệp mở rộng liên kết trực tiếp với website đối tác.</p>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-slate-500">
+        <span>Liên kết đối tác:</span>
+        <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold underline">Google</a> •
+        <a href="https://microsoft.com" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold underline">Microsoft</a> •
+        <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" class="hover:text-purple-600 font-semibold underline">Amazon</a>
+      </div>
+    </div>
+
+    <!-- Thanh Tìm Kiếm & Các Bộ Lọc -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+      <div>
+        <label for="search-input" class="sr-only">Tìm kiếm nhà tuyển dụng</label>
+        <input type="search" id="search-input" placeholder="Ví dụ: FPT, Viettel..." class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent p-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600">
+      </div>
+
+      <!-- Lọc Phân Khúc -->
+      <div>
+        <label for="category-select" class="sr-only">Lọc theo phân khúc</label>
+        <select id="category-select" class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent p-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600">
+          <option value="all" class="dark:bg-slate-900">Tất cả phân khúc</option>
+          <option value="con-nhieu" class="dark:bg-slate-900">Còn nhiều vị trí</option>
+          <option value="it-vi-tri" class="dark:bg-slate-900">Ít vị trí</option>
+          <option value="het" class="dark:bg-slate-900">Hết vị trí</option>
+        </select>
+      </div>
+
+      <!-- Lọc Trạng Thái -->
+      <div>
+        <label for="status-select" class="sr-only">Lọc theo trạng thái</label>
+        <select id="status-select" class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent p-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600">
+          <option value="all" class="dark:bg-slate-900">Tất cả trạng thái</option>
+          <option value="con-trong" class="dark:bg-slate-900">Còn trống</option>
+          <option value="gan-het" class="dark:bg-slate-900">Gần hết</option>
+          <option value="het-sach" class="dark:bg-slate-900">Hết sạch</option>
+        </select>
+      </div>
+
+      <!-- Sắp Xếp Lương / Ngày -->
+      <div>
+        <label for="sort-select" class="sr-only">Sắp xếp danh sách</label>
+        <select id="sort-select" class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent p-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600">
+          <option value="amount-desc" class="dark:bg-slate-900">Mức lương — Cao nhất trước</option>
+          <option value="amount-asc" class="dark:bg-slate-900">Mức lương — Thấp nhất trước</option>
+          <option value="date-desc" class="dark:bg-slate-900">Ngày đăng — Mới nhất trước</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Nút Thao Tác Dữ Liệu -->
+    <div class="flex flex-wrap gap-3 mb-6">
+      <div class="flex items-center gap-3">
+        <button id="clear-filters-btn" type="button" class="px-4 py-2 border border-slate-200 dark:border-slate-800 rounded-xl text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800">Xóa bộ lọc</button>
+        <button id="restore-default-btn" type="button" class="px-4 py-2 border border-slate-200 dark:border-slate-800 rounded-xl text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800">Khôi phục dữ liệu mẫu</button>
+      </div>
+    </div>
+
+    <!-- 4 Khối Trạng Thái HTML Theo Đồ Án -->
+    <div id="state-loading" class="p-12 text-center text-slate-500 dark:text-slate-400 font-medium bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+      <div class="inline-block animate-spin w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full mb-3"></div>
+      <p>Đang tải dữ liệu việc làm...</p>
+    </div>
+
+    <div id="state-error" class="hidden p-8 text-center text-red-500 bg-red-50 dark:bg-red-950/30 rounded-2xl font-semibold border border-red-200 dark:border-red-900"></div>
+
+    <div id="state-empty" class="hidden p-12 text-center text-slate-400 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+      <p class="text-lg font-semibold">Không tìm thấy công việc nào phù hợp.</p>
+      <p class="text-sm mt-1">Thử thay đổi từ khóa hoặc bộ lọc của bạn.</p>
+    </div>
+
+    <!-- Khối Bảng Cuộn Ngang -->
+    <div id="record-table-wrapper" class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 hidden">
+      <table class="w-full text-left border-collapse">
+        <caption class="sr-only">Danh sách công việc tuyển dụng và link ứng tuyển sang các website tuyển dụng đối tác</caption>
+        <thead class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-500">
+          <tr>
+            <th scope="col" class="p-4">Mã việc</th>
+            <th scope="col" class="p-4">Nhà tuyển dụng</th>
+            <th scope="col" class="p-4">Phân khúc</th>
+            <th scope="col" class="p-4 text-right">Chỉ tiêu</th>
+            <th scope="col" class="p-4 text-right">Mức lương (VNĐ)</th>
+            <th scope="col" class="p-4">Ngày đăng</th>
+            <th scope="col" class="p-4">Trạng thái</th>
+            <th scope="col" class="p-4 text-center">Trang tuyển dụng</th>
+            <th scope="col" class="p-4"><span class="sr-only">Hành động</span></th>
+          </tr>
+        </thead>
+        <tbody id="record-body" class="divide-y divide-slate-200 dark:divide-slate-800"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-12 mt-12">
+    <div class="mx-auto max-w-6xl px-5 flex flex-wrap justify-between items-center gap-4 text-sm text-slate-500">
+      <p>© 2026 JobSupport. Tất cả quyền được bảo lưu.</p>
+      <div class="flex gap-6">
+        <a href="./index.html">Trang chủ</a>
+        <a href="./jobs.html">Sổ việc làm</a>
+        <a href="https://topcv.vn" target="_blank" rel="noopener noreferrer">TopCV</a>
+        <a href="https://vietnamworks.com" target="_blank" rel="noopener noreferrer">VietnamWorks</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Template Row An Toàn Chống Lỗi XSS -->
+  <template id="row-template">
+    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+      <td class="p-4 text-xs font-mono text-slate-400" data-cell="id"></td>
+      <td class="p-4 font-bold" data-cell="trader"></td>
+      <td class="p-4 text-sm" data-cell="category"></td>
+      <td class="p-4 text-sm text-right font-medium" data-cell="weight"></td>
+      <td class="p-4 text-sm font-extrabold text-right text-purple-600 dark:text-purple-400" data-cell="amount"></td>
+      <td class="p-4 text-xs text-slate-500" data-cell="date"></td>
+      <td class="p-4 text-sm" data-cell="status"></td>
+      <td class="p-4 text-center">
+        <a data-cell="link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-purple-600 dark:text-purple-400 hover:underline bg-purple-50 dark:bg-purple-950/50 px-2.5 py-1 rounded-lg">
+          Ứng tuyển ↗
+        </a>
+      </td>
+      <td class="p-4 text-right">
+        <button type="button" data-action="delete" class="text-xs font-semibold text-red-500 hover:text-red-700 hover:underline">Xóa</button>
+      </td>
+    </tr>
+  </template>
+
+  <script type="module" src="./js/main.js"></script>
+
+  <!-- Script Khởi Tạo UI Cơ Bản -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    }
+
+    const menuToggleBtn = document.getElementById('menu-toggle');
+    const navMobile = document.getElementById('nav-mobile');
+    if (menuToggleBtn && navMobile) {
+      menuToggleBtn.addEventListener('click', () => {
+        const isExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
+        menuToggleBtn.setAttribute('aria-expanded', !isExpanded);
+        navMobile.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

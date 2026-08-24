@@ -2,29 +2,39 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
   <title>Cổng Thông Tin Hỗ Trợ Việc Làm - JobSupport</title>
   <script>(function(){const s=localStorage.getItem("theme"),d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);})();</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{600:'#7c3aed',700:'#6d28d9'}}}}}</script>
 </head>
-<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors">
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-sans">
 
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:text-slate-900 focus:z-50">Bỏ qua đến nội dung chính</a>
+  
+
+      
   
   <!-- Header -->
   <header class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
     <nav aria-label="Điều hướng chính" class="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
-      <a href="/" class="font-bold text-xl text-purple-600 dark:text-purple-400">JobSupport</a>
+      <a href="index.html" class="font-bold text-xl text-purple-600 dark:text-purple-400">JobSupport</a>
+
       <div id="nav-mobile" class="hidden lg:flex absolute lg:static top-full left-0 right-0 bg-white dark:bg-slate-900 lg:bg-transparent p-5 lg:p-0 border-b lg:border-0 border-slate-200 dark:border-slate-800 flex-col lg:flex-row items-center gap-6 shadow-lg lg:shadow-none">
         <ul class="flex flex-col lg:flex-row items-center gap-4 lg:space-x-6 text-sm font-medium">
           <li><a href="#tinh-nang" class="hover:text-purple-600 dark:hover:text-purple-400">Tính năng</a></li>
+          <li><a href="jobs.html" class="hover:text-purple-600 dark:hover:text-purple-400">Sổ Việc Làm</a></li>
           <li><a href="#bao-gia" class="hover:text-purple-600 dark:hover:text-purple-400">Bảng giá</a></li>
-          <li><a href="#lien-he" class="hover:text-purple-600 dark:hover:text-purple-400">Liên hệ</a></li>
+          <li><a href="lienhe.html" class="hover:text-purple-600 dark:hover:text-purple-400">Liên hệ</a></li>
           <li><a href="#faq" class="hover:text-purple-600 dark:hover:text-purple-400">Hỏi đáp</a></li>
+          
         </ul>
       </div>
       <div class="flex items-center gap-3">
-        <button type="button" class="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-4 py-2 rounded-xl">Đăng nhập</button>
+        <a href="pricing.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors">
+          Bắt Đầu Ngay
+        </a>
         <button id="theme-toggle" type="button" aria-label="Chuyển đổi giao diện" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
           <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
@@ -44,7 +54,7 @@
         <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 leading-tight">Tìm việc làm mơ ước & Tạo CV Chuyên Nghiệp</h1>
         <p class="text-slate-500 dark:text-slate-400 mt-4 text-lg">Kết nối hàng ngàn cơ hội việc làm IT, Designer hàng đầu với sự hỗ trợ của thuật toán thông minh.</p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#danh-sach" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all">Tạo CV ngay</a>
+          <a href="taocv.html" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all">Tạo CV ngay</a>
           <a href="#tinh-nang" class="border border-slate-200 dark:border-slate-800 font-semibold px-6 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800">Tìm hiểu thêm</a>
         </div>
       </div>
@@ -106,6 +116,7 @@
 
     <!-- Tính năng -->
     <section id="tinh-nang" class="mx-auto max-w-6xl px-5 py-12">
+      <section class="reveal-item mx-auto max-w-6xl px-5 py-12 md:py-20 grid lg:grid-cols-2 gap-12 items-center"></section>
       <h2 class="text-3xl font-bold text-center mb-12">Tính năng nổi bật</h2>
       <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <li class="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800">
@@ -123,6 +134,7 @@
           <h3 class="text-xl font-bold mb-2">Phỏng vấn thử AI</h3>
           <p class="text-sm text-slate-500 dark:text-slate-400">Luyện tập câu hỏi phỏng vấn thực tế và nhận phản hồi ngay lập tức.</p>
         </li>
+        
       </ul>
     </section>
 
@@ -177,7 +189,7 @@
           <li>✓ Ứng tuyển 5 công việc/tháng</li>
         </ul>
       </div>
-      <button type="button" class="mt-8 w-full py-3 border border-slate-200 dark:border-slate-700 rounded-xl font-semibold">Bắt đầu</button>
+      <a href="dangnhap.html" class="mt-8 w-full block text-center py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold shadow transition-all">Bắt Đầu Ngay</a>
     </div>
 
     <!-- Gói Pro -->
@@ -195,7 +207,7 @@
           <li>✓ Ưu tiên hiển thị hồ sơ</li>
         </ul>
       </div>
-      <button type="button" class="mt-8 w-full py-3 bg-purple-600 text-white rounded-xl font-semibold">Nâng cấp ngay</button>
+      <a href="dangnhap.html" class="mt-8 w-full block text-center py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold shadow transition-all">Nâng cấp Ngay</a>
     </div>
 
     <!-- Gói Doanh nghiệp -->
@@ -211,7 +223,7 @@
           <li>✓ Lọc hồ sơ AI nâng cao</li>
         </ul>
       </div>
-      <button type="button" class="mt-8 w-full py-3 border border-slate-200 dark:border-slate-700 rounded-xl font-semibold">Nâng cấp ngay</button>
+      <a href="dangnhap.html" class="mt-8 w-full block text-center py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold shadow transition-all">Nâng cấp Ngay</a>
     </div>
   </div>
 </section>
@@ -226,16 +238,116 @@
       </ol>
     </section>
 
-    <!-- Liên hệ -->
-    <section id="lien-he" class="mx-auto max-w-6xl px-5 py-12">
-      <h2 class="text-3xl font-bold text-center mb-12">Liên hệ với chúng tôi</h2>
-      <form class="max-w-2xl mx-auto p-8 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800 space-y-4" action="#" method="POST">
-        <div><label for="name" class="block text-sm font-semibold mb-2">Họ và tên *</label><input type="text" id="name" name="name" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm" required></div>
-        <div><label for="email" class="block text-sm font-semibold mb-2">Email *</label><input type="email" id="email" name="email" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm" required></div>
-        <div><label for="message" class="block text-sm font-semibold mb-2">Nội dung *</label><textarea id="message" name="message" rows="3" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm" required></textarea></div>
-        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition-all">Gửi liên hệ</button>
-      </form>
-    </section>
+    <!-- Section Công Việc Ưa Chuộng -->
+<section class="mx-auto max-w-6xl px-5 py-12">
+  <div class="mb-8">
+    <span class="text-xs font-bold uppercase tracking-wider text-purple-500">GỢI Ý HẤP DẪN</span>
+    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Các công việc ưa chuộng tiêu biểu</h2>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-3">
+    <!-- Card 1 -->
+    <div class="bg-slate-900 text-white rounded-2xl overflow-hidden border border-slate-800 shadow-xl transition-transform hover:-translate-y-1">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Lập trình viên Frontend" class="w-full h-52 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2 text-white">Lập trình viên Frontend</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Xây dựng giao diện web hiện đại với ReactJS, Tailwind CSS và tối ưu trải nghiệm người dùng mượt mà.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-slate-900 text-white rounded-2xl overflow-hidden border border-slate-800 shadow-xl transition-transform hover:-translate-y-1">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Thiết kế UI/UX" class="w-full h-52 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2 text-white">Thiết kế UI/UX</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Sáng tạo giao diện ứng dụng bắt mắt, tối ưu luồng người dùng và thiết kế hệ thống Design System.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-slate-900 text-white rounded-2xl overflow-hidden border border-slate-800 shadow-xl transition-transform hover:-translate-y-1">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Chuyên viên Phân tích Dữ liệu" class="w-full h-52 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2 text-white">Phân tích Dữ liệu (Data Analyst)</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Khai phá dữ liệu kinh doanh, xây dựng báo cáo Dashboard trực quan và hỗ trợ ra quyết định chiến lược.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Section Liên hệ -->
+<section id="lien-he" class="mx-auto max-w-6xl px-5 py-12">
+  <h2 class="text-3xl font-bold text-center mb-12">Liên hệ với chúng tôi</h2>
+  <form id="contact-form" class="max-w-2xl mx-auto p-8 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-800 space-y-4">
+    <div>
+      <label for="name" class="block text-sm font-semibold mb-2">Họ và tên *</label>
+      <input type="text" id="name" name="name" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm focus:outline-none focus:border-purple-600" required>
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-semibold mb-2">Email *</label>
+      <input type="email" id="email" name="email" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm focus:outline-none focus:border-purple-600" required>
+    </div>
+    <div>
+      <label for="message" class="block text-sm font-semibold mb-2">Nội dung *</label>
+      <textarea id="message" name="message" rows="3" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent p-3 text-sm focus:outline-none focus:border-purple-600" required></textarea>
+    </div>
+    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition-all shadow">Gửi liên hệ</button>
+  </form>
+</section>
+
+<!-- Toast Notification UI (Đặt ở góc dưới màn hình) -->
+<div id="toast-success" class="fixed bottom-5 right-5 z-50 hidden flex items-center gap-3 bg-emerald-600 text-white px-5 py-3.5 rounded-2xl shadow-2xl transition-all duration-300 transform translate-y-5 opacity-0">
+  <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+  </svg>
+  <div>
+    <h4 class="font-bold text-sm">Thành công!</h4>
+    <p id="toast-message" class="text-xs opacity-90">Gửi thông tin thành công.</p>
+  </div>
+</div>
+
+<!-- Script xử lý hiển thị thông báo -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const toast = document.getElementById('toast-success');
+    const toastMsg = document.getElementById('toast-message');
+
+    function showToast(message) {
+      if (!toast) return;
+
+      if (toastMsg) toastMsg.textContent = message;
+
+      // Hiển thị toast với hiệu ứng trượt lên
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-5', 'opacity-0');
+      }, 10);
+
+      // Tự động ẩn toast sau 3 giây
+      setTimeout(() => {
+        toast.classList.add('translate-y-5', 'opacity-0');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 300);
+      }, 3000);
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Chặn tải lại trang
+        showToast('Cảm ơn bạn! Tin nhắn liên hệ đã được gửi thành công.');
+        contactForm.reset(); // Xóa dữ liệu cũ trên form
+      });
+    }
+  });
+</script>
 
     <!-- FAQ (Tích hợp Accordion JS Hook data-faq-trigger) -->
     <section id="faq" class="mx-auto max-w-6xl px-5 py-12">
@@ -262,7 +374,7 @@
     <section class="mx-auto max-w-6xl px-5 py-16 text-center bg-purple-600 text-white rounded-2xl my-10">
       <h2 class="text-3xl font-bold mb-4">Sẵn sàng cho bước tiến mới?</h2>
       <p class="mb-8 opacity-90">Đăng ký tài khoản ngay hôm nay để không bỏ lỡ những cơ hội việc làm hấp dẫn nhất.</p>
-      <a href="#" class="bg-white text-purple-600 font-semibold px-6 py-3 rounded-xl inline-block">Tạo tài khoản miễn phí</a>
+      <a href="dangnhap.html" class="bg-white text-purple-600 font-semibold px-6 py-3 rounded-xl inline-block">Đăng Ký Miễn Phí</a>
     </section>
   </main>
 
@@ -277,41 +389,40 @@
   <script type="module" src="./js/main.js"></script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('pricing-toggle');
-    if (!toggleBtn) return;
+ document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('pricing-toggle');
+  if (!toggleBtn) return;
 
-    toggleBtn.addEventListener('click', () => {
-      const isYearly = toggleBtn.getAttribute('aria-checked') !== 'true';
-      toggleBtn.setAttribute('aria-checked', isYearly ? 'true' : 'false');
+  toggleBtn.addEventListener('click', () => {
+    const isYearly = toggleBtn.getAttribute('aria-checked') !== 'true';
+    toggleBtn.setAttribute('aria-checked', isYearly ? 'true' : 'false');
 
-      // Đổi UI Nút Switch
-      const [monthlyLabel, yearlyLabel] = toggleBtn.querySelectorAll('span');
-      if (isYearly) {
-        monthlyLabel.className = 'px-3 py-1 text-slate-500';
-        yearlyLabel.className = 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold';
-      } else {
-        monthlyLabel.className = 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold';
-        yearlyLabel.className = 'px-3 py-1 text-slate-500';
+    // 1. Đổi UI Nút Switch
+    const labels = toggleBtn.querySelectorAll('span');
+    if (labels.length >= 2) {
+      labels[0].className = isYearly 
+        ? 'px-3 py-1 text-slate-500 cursor-pointer' 
+        : 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold cursor-pointer';
+      labels[1].className = isYearly 
+        ? 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold cursor-pointer' 
+        : 'px-3 py-1 text-slate-500 cursor-pointer';
+    }
+
+    // 2. Đổi Giá Tiền và Đơn Vị (/tháng hoặc /năm)
+    document.querySelectorAll('[data-price]').forEach(priceEl => {
+      const val = isYearly ? priceEl.dataset.yearly : priceEl.dataset.monthly;
+      if (val) {
+        priceEl.textContent = `${Number(val).toLocaleString('vi-VN')} ₫`;
       }
-
-      // Đổi Giá Tiền
-      document.querySelectorAll('[data-price]').forEach(priceEl => {
-        const val = isYearly ? priceEl.dataset.yearly : priceEl.dataset.monthly;
-        if (val) {
-          priceEl.textContent = `${Number(val).toLocaleString('vi-VN')} ₫`;
-        }
-      });
-
-      // Đổi Đơn vị /tháng hoặc /năm
-      document.querySelectorAll('#bao-gia span').forEach(span => {
-        const text = span.textContent.trim();
-        if (text === '/tháng' || text === '/năm') {
-          span.textContent = isYearly ? '/năm' : '/tháng';
-        }
-      });
+      
+      // Tìm span chứa đơn vị thời gian ngay sau span data-price
+      const unitSpan = priceEl.nextElementSibling;
+      if (unitSpan) {
+        unitSpan.textContent = isYearly ? '/năm' : '/tháng';
+      }
     });
   });
+});
 </script>
 
   <!-- Script dự phòng khởi tạo sự kiện DOM -->
@@ -337,6 +448,24 @@
     }
   </script>
 
+<template id="row-template">
+    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+      <td class="p-4 text-xs font-mono text-slate-400" data-cell="id"></td>
+      <td class="p-4 font-bold" data-cell="trader"></td>
+      <td class="p-4 text-sm" data-cell="category"></td>
+      <td class="p-4 text-sm text-right font-medium" data-cell="weight"></td>
+      <td class="p-4 text-sm font-extrabold text-right text-purple-600 dark:text-purple-400" data-cell="amount"></td>
+      <td class="p-4 text-xs text-slate-500" data-cell="date"></td>
+      <td class="p-4 text-sm" data-cell="status"></td>
+      <td class="p-4 text-right">
+        <button type="button" data-action="delete" class="text-xs font-semibold text-red-500 hover:text-red-700 hover:underline">Xóa</button>
+      </td>
+    </tr>
+  </template>
+
+
+  
+  
 
 </body>
 </html>
