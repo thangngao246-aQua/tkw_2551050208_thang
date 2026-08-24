@@ -1,42 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('pricing-toggle'); //[cite: 1]
-  if (!toggleBtn) return; //[cite: 1]
+export function initPricing() {
+  const toggleBtn = document.getElementById("pricing-toggle");
+  if (!toggleBtn) return;
 
-  const priceElements = document.querySelectorAll('[data-price]'); //[cite: 1]
-  const monthlySpan = toggleBtn.children[0]; //[cite: 1]
-  const yearlySpan = toggleBtn.children[1]; //[cite: 1]
+  const priceElements = document.querySelectorAll("[data-price]");
+  const formatter = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    maximumFractionDigits: 0,
+  });
 
-  let isYearly = false; //[cite: 1]
+  toggleBtn.addEventListener("click", () => {
+    const isYearly = toggleBtn.getAttribute("aria-checked") !== "true";
+    toggleBtn.setAttribute("aria-checked", String(isYearly));
 
-  toggleBtn.addEventListener('click', () => { //[cite: 1]
-    isYearly = !isYearly; //[cite: 1]
-    toggleBtn.setAttribute('aria-checked', isYearly); //[cite: 1]
-
-    // Cập nhật giao diện nút Toggle
-    if (isYearly) {
-      monthlySpan.className = 'px-3 py-1 text-slate-500'; //[cite: 1]
-      yearlySpan.className = 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold'; //[cite: 1]
-    } else {
-      monthlySpan.className = 'px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold'; //[cite: 1]
-      yearlySpan.className = 'px-3 py-1 text-slate-500'; //[cite: 1]
+    // Đổi giao diện giao diện công tắc
+    const [monthlyLabel, yearlyLabel] = toggleBtn.querySelectorAll("span");
+    if (monthlyLabel && yearlyLabel) {
+      if (isYearly) {
+        monthlyLabel.className = "px-3 py-1 text-slate-500";
+        yearlyLabel.className = "px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow text-purple-600 dark:text-purple-400 font-bold";
+      } else {
+        monthlyLabel.className = "px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow font-bold";
+        yearlyLabel.className = "px-3 py-1 text-slate-500";
+      }
     }
 
-    // Cập nhật giá tiền và đơn vị hiển thị
-    priceElements.forEach(el => { //[cite: 1]
-      const monthlyPrice = Number(el.dataset.monthly); //[cite: 1]
-      
-      // Công thức: (Giá tháng * 12) giảm 20% (nhân với 0.8)
-      const yearlyPrice = Math.round(monthlyPrice * 12 * 0.8); //[cite: 1]
+    // Đổi giá tiền và đơn vị
+    priceElements.forEach((el) => {
+      const val = isYearly ? el.dataset.yearly : el.dataset.monthly;
+      if (val) {
+        el.textContent = formatter.format(Number(val));
+      }
 
-      const price = isYearly ? yearlyPrice : monthlyPrice; //[cite: 1]
-      const periodText = el.nextElementSibling; //[cite: 1]
-
-      // Định dạng số tiền hiển thị theo chuẩn Việt Nam
-      el.textContent = `${Number(price).toLocaleString('vi-VN')} ₫`; //[cite: 1]
-
-      if (periodText) { //[cite: 1]
-        periodText.textContent = isYearly ? '/năm' : '/tháng'; //[cite: 1]
+      const periodText = el.nextElementSibling;
+      if (periodText) {
+        periodText.textContent = isYearly ? "/năm" : "/tháng";
       }
     });
   });
-});
+}
